@@ -22,8 +22,8 @@ object LottoViewSetter {
         ball.text = "${number}"
     }
 
-    fun setLottoBallView1to45(ball1to45: List<TextView>) {
-        for (ball in ball1to45) {
+    fun setLottoBallViewsSize(balls: List<TextView>) {
+        for (ball in balls) {
             setLottoBallViewSize(ball)
         }
     }
