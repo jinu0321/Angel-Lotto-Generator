@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         }
         setSubmitButton()
 
-        fun setSelectedBallTextViews() {
+        fun setSelectedBallsTextView() {
             val list = selectedBallSet.toList().sorted()
             mainSelectedBallTextView.text = "선택: " + list.joinToString(", ")
         }
@@ -118,11 +118,11 @@ class MainActivity : AppCompatActivity() {
             if (!selectedBallSet.contains(ballNumber)) {
                 selectedBallSet.add(ballNumber)
                 LottoViewSetter.setLottoBallView(balls[ballNumber - 1], ballNumber)
-                setSelectedBallTextViews()
+                setSelectedBallsTextView()
             } else if (selectedBallSet.contains(ballNumber)) {
                 selectedBallSet.remove(ballNumber)
                 balls[ballNumber - 1].setBackgroundResource(R.drawable.background_ball_zero)
-                setSelectedBallTextViews()
+                setSelectedBallsTextView()
             }
         }
 
@@ -159,6 +159,12 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+
+        mainClearButton.setOnClickListener {
+            selectedBallSet.clear()
+            for (index in 0..44) balls[index].background = getDrawable(R.drawable.background_ball_zero)
+            setSelectedBallsTextView()
+        }
     }
 
     override fun onDestroy() {
