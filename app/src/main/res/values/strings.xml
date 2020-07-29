@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">번호생성기</string>
+
+    <string name="main_internetConnection_fail">인터넷에 연결해주세요!</string>
+    <string name="main_apidownload_success">모두 최신입니다!</string>
+    <string name="main_api_not_uploaded">아직 최신 정보가 올라오지 않았습니다!</string>
 </resources>

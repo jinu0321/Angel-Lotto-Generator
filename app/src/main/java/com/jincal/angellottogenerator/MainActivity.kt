@@ -8,6 +8,10 @@ import android.util.DisplayMetrics
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import com.jincal.angellottogenerator.objects.SelectedBallHolder.selectedBallSet
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import com.jincal.angellottogenerator.objects.InternetConnectionChecker
 import kr.blindside.goodlotto.objects.ViewController
 import kr.blindside.goodlotto.objects.ScreenSizeHolder
 import org.jetbrains.anko.startActivity
