@@ -11,12 +11,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/mainClearButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainNameText">
+        app:layout_constraintTop_toBottomOf="@+id/mainNameTextView">
 
         <LinearLayout
             android:id="@+id/manualInputBallLayout1"
@@ -649,84 +649,75 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/mainNameText"
+        android:id="@+id/mainNameTextView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-medium"
+        android:gravity="center"
         android:lines="1"
-        android:text="고정수를 입력하세요. (1~5개 혹은 7개 이상)"
+        android:text="고정수를 입력하세요."
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:autoSizeMaxTextSize="24sp"
         app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/manualInputLottoBallWholeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/mainSelectedBallTextView"
-        android:layout_width="0dp"
-        android:layout_height="60sp"
-        android:layout_marginStart="3sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="3sp"
-        android:gravity="center"
-        android:lines="3"
-        android:text="선택: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="20sp"
-        app:autoSizeMaxTextSize="22sp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainClearButton"
-        tools:text="선택: 2, 5, 7, 12, 21, 33, 36, 41" />
 
     <EditText
         android:id="@+id/mainResultCountEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:autoSizeTextType="uniform"
         android:ems="10"
         android:gravity="center"
-        android:hint="결과 개수를 써주세요."
+        android:hint="결과 개수 입력(최대값 이하) "
         android:inputType="number"
+        android:maxLength="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mainSubmitButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainSelectedBallTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/mainClearButton" />
 
     <Button
         android:id="@+id/mainSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/background_manualsubmit_submitbutton_inavailable"
         android:text="결과 도출"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/mainResultCountEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/mainResultCountEditText"
-        app:layout_constraintTop_toBottomOf="@+id/mainSelectedBallTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/mainResultCountEditText" />
 
     <Button
         android:id="@+id/mainClearButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:background="@drawable/background_manualsubmit_clearbutton"
         android:text="선택 해제"
+        app:layout_constraintBottom_toTopOf="@+id/mainResultCountEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manualInputLottoBallWholeLayout" />
+
+    <TextView
+        android:id="@+id/mainSeletedBallCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="0개"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/mainClearButton"
+        app:layout_constraintEnd_toEndOf="@+id/mainClearButton"
+        app:layout_constraintStart_toStartOf="@+id/mainClearButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

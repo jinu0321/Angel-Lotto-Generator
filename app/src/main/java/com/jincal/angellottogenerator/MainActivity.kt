@@ -8,7 +8,7 @@ import android.util.DisplayMetrics
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import com.jincal.angellottogenerator.objects.SelectedBallHolder.selectedBallSet
 import kotlinx.android.synthetic.main.activity_main.*
-import kr.blindside.goodlotto.objects.LottoViewSetter
+import kr.blindside.goodlotto.objects.ViewController
 import kr.blindside.goodlotto.objects.ScreenSizeHolder
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         ScreenSizeHolder.screenWidth = displayMetrics.widthPixels
+        ScreenSizeHolder.screenHeight = displayMetrics.heightPixels
 
         val balls = listOf(
             manualInputSelectBall1,
@@ -74,14 +75,18 @@ class MainActivity : AppCompatActivity() {
             manualInputEmptyBall3,
             manualInputEmptyBall4
         )
-        LottoViewSetter.setLottoBallViewsSize(balls)
+        ViewController.setLottoBallViewsSize(balls)
+        val textViewSize = ScreenSizeHolder.screenHeight / 12
+        ViewController.setViewHeight(mainNameTextView, textViewSize)
+        ViewController.setViewHeight(mainResultCountEditText, textViewSize)
 
         var buttonClickable = false
         fun setSubmitButton() {
             if (selectedBallSet.size in 1..5) {
                 if (mainResultCountEditText.text != null) {
                     try {
-                        if (mainResultCountEditText.text.toString().toInt() < getCombination(45-selectedBallSet.size, 6-selectedBallSet.size)) {
+                        if (mainResultCountEditText.text.toString().toInt() <= getCombination(45-selectedBallSet.size, 6-selectedBallSet.size)
+                            && mainResultCountEditText.text.toString().toInt() > 0) {
                             mainSubmitButton.setBackgroundResource(R.drawable.background_manualsubmit_submitbutton_available)
                             buttonClickable = true
                         } else {
@@ -93,7 +98,8 @@ class MainActivity : AppCompatActivity() {
             } else if (selectedBallSet.size > 6) {
                 if (mainResultCountEditText.text != null) {
                     try {
-                        if (mainResultCountEditText.text.toString().toInt() < getCombination(selectedBallSet.size, 6)) {
+                        if (mainResultCountEditText.text.toString().toInt() < getCombination(selectedBallSet.size, 6)
+                            && mainResultCountEditText.text.toString().toInt() > 0) {
                             mainSubmitButton.setBackgroundResource(R.drawable.background_manualsubmit_submitbutton_available)
                             buttonClickable = true
                         } else {
@@ -109,20 +115,19 @@ class MainActivity : AppCompatActivity() {
         }
         setSubmitButton()
 
-        fun setSelectedBallsTextView() {
-            val list = selectedBallSet.toList().sorted()
-            mainSelectedBallTextView.text = "선택: " + list.joinToString(", ")
+        fun setMainSelectedBallCountTextView() {
+            mainSeletedBallCountTextView.text = "${SelectedBallHolder.selectedBallCounts}개"
         }
 
         fun toggle(ballNumber: Int) {
             if (!selectedBallSet.contains(ballNumber)) {
                 selectedBallSet.add(ballNumber)
-                LottoViewSetter.setLottoBallView(balls[ballNumber - 1], ballNumber)
-                setSelectedBallsTextView()
+                ViewController.setLottoBallView(balls[ballNumber - 1], ballNumber)
+                setMainSelectedBallCountTextView()
             } else if (selectedBallSet.contains(ballNumber)) {
                 selectedBallSet.remove(ballNumber)
                 balls[ballNumber - 1].setBackgroundResource(R.drawable.background_ball_zero)
-                setSelectedBallsTextView()
+                setMainSelectedBallCountTextView()
             }
         }
 
@@ -141,12 +146,10 @@ class MainActivity : AppCompatActivity() {
                             SelectedBallHolder.resultCount = mainResultCountEditText.text.toString().toInt()
                             startActivity<ResultActivity>()
                         }
-                    } catch (e: Exception) {
-                        toast("숫자를 입력해 주세요.")
-                    }
+                    } catch (e: Exception) {}
                 }
             } else {
-                toast("번호를 선택해 주세요.")
+                toast("올바르게 입력해 주세요.")
             }
         }
 
@@ -163,7 +166,7 @@ class MainActivity : AppCompatActivity() {
         mainClearButton.setOnClickListener {
             selectedBallSet.clear()
             for (index in 0..44) balls[index].background = getDrawable(R.drawable.background_ball_zero)
-            setSelectedBallsTextView()
+            setMainSelectedBallCountTextView()
         }
     }
 

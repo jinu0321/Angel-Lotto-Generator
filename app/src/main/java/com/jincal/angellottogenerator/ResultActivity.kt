@@ -63,6 +63,8 @@ class ResultActivity : AppCompatActivity() {
 
         resultRecyclerView.adapter = ResultRecyclerViewAdapter(resultCombinationList)
         resultRecyclerView.layoutManager = LinearLayoutManager(this)
-        resultRecyclerView.addItemDecoration(RecyclerViewDecoration(3, 3))
+        resultRecyclerView.addItemDecoration(RecyclerViewDecoration(3, 4))
+
+        textView4.text = "선택한 번호: ${SelectedBallHolder.selectedBallList.joinToString()}"
     }
 }
