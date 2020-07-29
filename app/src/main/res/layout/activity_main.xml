@@ -720,4 +720,16 @@
         app:layout_constraintBottom_toTopOf="@+id/mainClearButton"
         app:layout_constraintEnd_toEndOf="@+id/mainClearButton"
         app:layout_constraintStart_toStartOf="@+id/mainClearButton" />
+
+    <TextView
+        android:id="@+id/mainFirstPrizeExistTextVIewTmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toBottomOf="@+id/mainClearButton"
+        app:layout_constraintEnd_toStartOf="@+id/mainClearButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mainClearButton"
+        tools:text="751회 1등" />
 </androidx.constraintlayout.widget.ConstraintLayout>

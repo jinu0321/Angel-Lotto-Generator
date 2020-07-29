@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
+import com.jincal.angellottogenerator.classes.Lotto
+import com.jincal.angellottogenerator.classes.LottoRealmObject
+import com.jincal.angellottogenerator.functions.getLatestEpisode
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import com.jincal.angellottogenerator.objects.SelectedBallHolder.selectedBallSet
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,6 +15,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import com.jincal.angellottogenerator.objects.InternetConnectionChecker
+import com.jincal.angellottogenerator.objects.RealmConfigurationSupplier
+import io.realm.Realm
+import io.realm.kotlin.where
 import kr.blindside.goodlotto.objects.ViewController
 import kr.blindside.goodlotto.objects.ScreenSizeHolder
 import org.jetbrains.anko.startActivity
@@ -85,7 +91,27 @@ class MainActivity : AppCompatActivity() {
         ViewController.setViewHeight(mainResultCountEditText, textViewSize)
 
         var buttonClickable = false
+
         fun setSubmitButton() {
+            if (selectedBallSet.size == 6) {
+                val realm = Realm.getInstance(RealmConfigurationSupplier.lottoApiConfiguration)
+                val temp = realm.where<LottoRealmObject>().findAll().map { it.toLotto() }
+
+                var equalCount = 0
+                for (lotto in temp) {
+                    for (i in 0..5) {
+                        if (lotto.ballNumberList[i] == SelectedBallHolder.selectedBallList[i]) equalCount++
+                    }
+                    if (equalCount == 6) {
+                        mainFirstPrizeExistTextVIewTmp.text = "${lotto.episode}회 1등"
+                        break
+                    }
+                    equalCount = 0
+                }
+                realm.close()
+            } else {
+                mainFirstPrizeExistTextVIewTmp.text = ""
+            }
             if (selectedBallSet.size in 1..5) {
                 if (mainResultCountEditText.text != null) {
                     try {
@@ -171,6 +197,7 @@ class MainActivity : AppCompatActivity() {
             selectedBallSet.clear()
             for (index in 0..44) balls[index].background = getDrawable(R.drawable.background_ball_zero)
             setMainSelectedBallCountTextView()
+            mainFirstPrizeExistTextVIewTmp.text = ""
         }
     }
 
