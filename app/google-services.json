@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "408982252371",
+    "firebase_url": "https://angel-lotto-generator.firebaseio.com",
+    "project_id": "angel-lotto-generator",
+    "storage_bucket": "angel-lotto-generator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408982252371:android:aaf13d2739b7a577824fa6",
+        "android_client_info": {
+          "package_name": "com.jincal.angellottogenerator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408982252371-g9als49etgj885enc2cnvd1vhsfghapt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtyKoUR3cMV-2N7MfyuLF7Lr-FCqXi6Io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408982252371-g9als49etgj885enc2cnvd1vhsfghapt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
