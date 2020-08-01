@@ -1,32 +1,31 @@
-package com.jincal.angellottogenerator
+package com.jincal.angellottogenerator.activities
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
+import com.jincal.angellottogenerator.R
+import com.jincal.angellottogenerator.classes.LottoRealmObject
+import com.jincal.angellottogenerator.functions.getCombination
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import com.jincal.angellottogenerator.objects.SelectedBallHolder.selectedBallSet
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import com.jincal.angellottogenerator.objects.InternetConnectionChecker
-import kr.blindside.goodlotto.objects.ViewController
-import kr.blindside.goodlotto.objects.ScreenSizeHolder
+import kotlinx.android.synthetic.main.activity_generator.*
+import com.jincal.angellottogenerator.objects.RealmConfigurationSupplier
+import io.realm.Realm
+import io.realm.kotlin.where
+import com.jincal.angellottogenerator.objects.ViewController
+import com.jincal.angellottogenerator.objects.ScreenSizeHolder
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.textColor
 import org.jetbrains.anko.toast
 import java.lang.Exception
 
-class MainActivity : AppCompatActivity() {
+class GeneratorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val displayMetrics = DisplayMetrics()
-        windowManager.defaultDisplay.getMetrics(displayMetrics)
-        ScreenSizeHolder.screenWidth = displayMetrics.widthPixels
-        ScreenSizeHolder.screenHeight = displayMetrics.heightPixels
+        setContentView(R.layout.activity_generator)
 
         val balls = listOf(
             manualInputSelectBall1,
@@ -85,7 +84,31 @@ class MainActivity : AppCompatActivity() {
         ViewController.setViewHeight(mainResultCountEditText, textViewSize)
 
         var buttonClickable = false
+
         fun setSubmitButton() {
+            if (selectedBallSet.size == 6) {
+                val realm = Realm.getInstance(RealmConfigurationSupplier.lottoApiConfiguration)
+                val temp = realm.where<LottoRealmObject>().findAll().map { it.toLotto() }
+
+                var equalCount = 0
+                mainFirstPrizeExistTextVIewTmp.textColor = Color.GRAY
+                mainFirstPrizeExistTextVIewTmp.text = "미당첨"
+                for (lotto in temp) {
+                    for (i in 0..5) {
+                        if (lotto.ballNumberList[i] == SelectedBallHolder.selectedBallList[i]) equalCount++
+                    }
+                    if (equalCount == 6) {
+                        mainFirstPrizeExistTextVIewTmp.textColor = Color.RED
+                        mainFirstPrizeExistTextVIewTmp.text = "${lotto.episode}회 1등"
+                        break
+                    }
+                    equalCount = 0
+                }
+
+                realm.close()
+            } else {
+                mainFirstPrizeExistTextVIewTmp.text = ""
+            }
             if (selectedBallSet.size in 1..5) {
                 if (mainResultCountEditText.text != null) {
                     try {
@@ -171,6 +194,7 @@ class MainActivity : AppCompatActivity() {
             selectedBallSet.clear()
             for (index in 0..44) balls[index].background = getDrawable(R.drawable.background_ball_zero)
             setMainSelectedBallCountTextView()
+            mainFirstPrizeExistTextVIewTmp.text = ""
         }
     }
 
@@ -180,22 +204,3 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-fun getPermutation(n: Int, r: Int): Int {
-    var nPr = 1
-    for (i in 1..r) {
-        nPr *= n + 1 - i
-    }
-    return nPr
-}
-
-fun getFactorial(n: Int): Int {
-    var nFac = 1
-    for (i in 2..n) {
-        nFac *= i
-    }
-    return nFac
-}
-
-fun getCombination(n: Int, r: Int): Int {
-    return getPermutation(n, r) / getFactorial(r)
-}

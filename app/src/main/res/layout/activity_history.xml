@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/background_activity_history"
+tools:context=".activities.HistoryActivity">
+
+
+    <TextView
+    android:id="@+id/lottoHistoryTitleText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="@string/history_title"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lottoHistoryPreviousEpisodeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_activity_history"
+        android:padding="6dp"
+        android:text="@string/history_previous"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottoHistoryTitleText" />
+
+    <TextView
+        android:id="@+id/lottoHistoryNextEpisodeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_activity_history"
+        android:padding="6dp"
+        android:text="@string/history_next"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottoHistoryTitleText" />
+
+<EditText
+    android:id="@+id/lottoHistoryEpisodeEditText"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="32dp"
+    android:ems="10"
+    android:gravity="center"
+    android:inputType="number"
+    app:layout_constraintEnd_toStartOf="@+id/lottoHistoryNextEpisodeButton"
+    app:layout_constraintStart_toEndOf="@+id/lottoHistoryPreviousEpisodeButton"
+    app:layout_constraintTop_toBottomOf="@+id/lottoHistoryTitleText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lottoHistoryLottoLayout"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottoHistoryEpisodeEditText">
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/history_date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoEpisode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/history_episode"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoDate" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoBall1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/background_ball_yellow"
+            android:gravity="center"
+            android:text="5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lottoHistoryLottoBall2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoEpisode" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoBall2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_ball_blue"
+            android:gravity="center"
+            android:text="13"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lottoHistoryLottoBall3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lottoHistoryLottoBall1"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoEpisode" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoBall3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_ball_red"
+            android:gravity="center"
+            android:text="26"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lottoHistoryLottoBall4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lottoHistoryLottoBall2"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoEpisode" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoBall4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_ball_gray"
+            android:gravity="center"
+            android:text="36"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lottoHistoryLottoBall5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lottoHistoryLottoBall3"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoEpisode" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoBall5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_ball_green"
+            android:gravity="center"
+            android:text="42"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lottoHistoryLottoBall6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lottoHistoryLottoBall4"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoEpisode" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoBall6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_ball_green"
+            android:gravity="center"
+            android:text="45"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lottoHistoryLottoBallBonus"
+            app:layout_constraintStart_toEndOf="@+id/lottoHistoryLottoBall5"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoEpisode" />
+
+        <TextView
+            android:id="@+id/lottoHistoryLottoBallBonus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/background_ball_red"
+            android:gravity="center"
+            android:text="29"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoEpisode"
+            app:layout_constraintVertical_bias="0.515" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<TextView
+    android:id="@+id/lottoHistoryFirstWinnerCompanies"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="32dp"
+    android:text="1등: 3명"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textSize="18sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/lottoHistoryLottoLayout" />
+
+<TextView
+    android:id="@+id/lottoHistoryFirstWinnerAmount"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:text="1등 당첨액: 2301142540원"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textSize="18sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/lottoHistoryFirstWinnerCompanies" />
+
+    <TextView
+        android:id="@+id/lottoHistorySelectManualCheckTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_activity_result"
+        android:paddingLeft="12dp"
+        android:paddingTop="8dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="8dp"
+        android:text="번호 입력해서 확인하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

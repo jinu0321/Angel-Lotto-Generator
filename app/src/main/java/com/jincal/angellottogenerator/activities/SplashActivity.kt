@@ -1,8 +1,10 @@
-package com.jincal.angellottogenerator
+package com.jincal.angellottogenerator.activities
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.DisplayMetrics
 import androidx.appcompat.app.AppCompatActivity
+import com.jincal.angellottogenerator.R
 import kotlinx.coroutines.*
 import com.jincal.angellottogenerator.classes.Lotto
 import com.jincal.angellottogenerator.functions.getLatestEpisode
@@ -10,16 +12,22 @@ import com.jincal.angellottogenerator.functions.getLatestEpisodeUserHas
 import com.jincal.angellottogenerator.objects.InternetConnectionChecker
 import com.jincal.angellottogenerator.objects.LottoApiGetter
 import com.jincal.angellottogenerator.objects.LottoRealmObjectManager
+import com.jincal.angellottogenerator.objects.ScreenSizeHolder
 import io.realm.Realm
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class SplashActivity : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT: Long = 100 // 0.1 sec
+    private val SPLASH_TIME_OUT: Long = 500 // 0.5 sec
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        ScreenSizeHolder.screenWidth = displayMetrics.widthPixels
+        ScreenSizeHolder.screenHeight = displayMetrics.heightPixels
 
         Realm.init(this)
 

@@ -4,4 +4,13 @@
     <string name="main_internetConnection_fail">인터넷에 연결해주세요!</string>
     <string name="main_apidownload_success">모두 최신입니다!</string>
     <string name="main_api_not_uploaded">아직 최신 정보가 올라오지 않았습니다!</string>
+
+    <string name="instruction_text">천사 로또번호 생성기에 오신 것을 환영합니다!\n\n번호 생성기 사용법\n(1) 고정수를 1~5개 선택합니다. 결과 번호를 몇 조합 생성할지 입력합니다. 결과 도출 버튼에 색이 들어오면 버튼을 눌러 고정수를 포함한 번호의 조합을 확인합니다.
+    \n(2) 수를 7개 혹은 더 많이 선택합니다. 결과 번호를 몇 조합 생성할지 입력합니다. 결과 도출 버튼에 색이 들어오면 버튼을 눌러 선택한 수들 중에서 6개를 뽑아 만든 결과를 확인합니다.\n\n주의사항: 선택한 수들을 이용해 만들 수 있는 최대 조합의 개수 이하의 결과 개수를 입력해야 합니다.</string>
+
+    <string name="history_title">역대 당첨번호 조회</string>
+    <string name="history_previous">이전회차</string>
+    <string name="history_next">다음회차</string>
+    <string name="history_date">0000년 00월 00일</string>
+    <string name="history_episode">000회차</string>
 </resources>

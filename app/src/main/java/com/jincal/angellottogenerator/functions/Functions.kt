@@ -1,9 +1,8 @@
 package com.jincal.angellottogenerator.functions
 
-import android.widget.TextView
+import android.util.Log
 import com.jincal.angellottogenerator.classes.LottoRealmObject
 import com.jincal.angellottogenerator.objects.RealmConfigurationSupplier
-import kr.blindside.goodlotto.objects.ScreenSizeHolder
 import io.realm.Realm
 import io.realm.kotlin.where
 import java.text.SimpleDateFormat
@@ -29,14 +28,27 @@ fun getLatestEpisode(): Int {
 fun getLatestEpisodeUserHas(): Int {
     val realm = Realm.getInstance(RealmConfigurationSupplier.lottoApiConfiguration)
     val savedLatestEpisode = realm.where<LottoRealmObject>().max("id")!!.toInt()
+    Log.d("dedede", savedLatestEpisode.toString())
     realm.close()
     return savedLatestEpisode
 }
 
-fun setBallViewSideLength(ballViewList: List<TextView>) {
-    ballViewList.forEach {
-        it.layoutParams.width = ScreenSizeHolder.lottoBallViewSideLength
-        it.layoutParams.height = ScreenSizeHolder.lottoBallViewSideLength
-        it.requestLayout()
+fun getPermutation(n: Int, r: Int): Int {
+    var nPr = 1
+    for (i in 1..r) {
+        nPr *= n + 1 - i
     }
+    return nPr
+}
+
+fun getFactorial(n: Int): Int {
+    var nFac = 1
+    for (i in 2..n) {
+        nFac *= i
+    }
+    return nFac
+}
+
+fun getCombination(n: Int, r: Int): Int {
+    return getPermutation(n, r) / getFactorial(r)
 }

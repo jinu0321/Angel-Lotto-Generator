@@ -1,4 +1,4 @@
-package kr.blindside.goodlotto.objects
+package com.jincal.angellottogenerator.objects
 
 object ScreenSizeHolder {
 
