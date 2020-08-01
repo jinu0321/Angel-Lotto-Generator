@@ -4,732 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/background_activity_main"
+    tools:context=".activities.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/manualInputLottoBallWholeLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/mainClearButton"
+    <ImageView
+        android:id="@+id/mainWingImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/mainSelectGeneratorTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainNameTextView">
-
-        <LinearLayout
-            android:id="@+id/manualInputBallLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/manualInputSelectBall1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="4"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="5"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="6"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="7"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/manualInputBallLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/manualInputSelectBall8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="8"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall9"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="9"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall10"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="10"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall11"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="11"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall12"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="12"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall13"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="13"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall14"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="14"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/manualInputBallLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/manualInputSelectBall15"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="15"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall16"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="16"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall17"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="17"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall18"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="18"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall19"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="19"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall20"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="20"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall21"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="21"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/manualInputBallLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/manualInputSelectBall22"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="22"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall23"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="23"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall24"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="24"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall25"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="25"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall26"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="26"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall27"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="27"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall28"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="28"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/manualInputBallLayout5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/manualInputSelectBall29"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="29"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall30"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="30"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall31"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="31"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall32"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="32"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall33"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="33"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall34"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="34"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall35"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="35"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/manualInputBallLayout6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/manualInputSelectBall36"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="36"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall37"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="37"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall38"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="38"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall39"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="39"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall40"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="40"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall41"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="41"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall42"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="42"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/manualInputBallLayout7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/manualInputSelectBall43"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="43"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall44"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="44"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputSelectBall45"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/background_ball_zero"
-                android:gravity="center"
-                android:text="45"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/manualInputEmptyBall1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/manualInputEmptyBall2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/manualInputEmptyBall3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/manualInputEmptyBall4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:gravity="center" />
-        </LinearLayout>
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_angel_wing" />
 
     <TextView
-        android:id="@+id/mainNameTextView"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center"
-        android:lines="1"
-        android:text="고정수를 입력하세요."
+        android:id="@+id/mainSelectGeneratorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/background_activity_generator"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="12dp"
+        android:paddingTop="6dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="6dp"
+        android:text="번호 생성기"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:autoSizeMaxTextSize="24sp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/manualInputLottoBallWholeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/mainSelectInstructionTextView"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/mainResultCountEditText"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/mainSelectHistoryTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:autoSizeTextType="uniform"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="결과 개수 입력(최대값 이하) "
-        android:inputType="number"
-        android:maxLength="5"
+        android:background="@drawable/background_activity_history"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="12dp"
+        android:paddingTop="6dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="6dp"
+        android:text="1등 번호 조회"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mainSubmitButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainClearButton" />
-
-    <Button
-        android:id="@+id/mainSubmitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/background_manualsubmit_submitbutton_inavailable"
-        android:text="결과 도출"
-        app:layout_constraintBottom_toBottomOf="@+id/mainResultCountEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/mainResultCountEditText"
-        app:layout_constraintTop_toTopOf="@+id/mainResultCountEditText" />
-
-    <Button
-        android:id="@+id/mainClearButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background_manualsubmit_clearbutton"
-        android:text="선택 해제"
-        app:layout_constraintBottom_toTopOf="@+id/mainResultCountEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manualInputLottoBallWholeLayout" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/mainSelectInstructionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/mainSelectInstructionTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/mainSeletedBallCountTextView"
+        android:id="@+id/mainSelectInstructionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:text="0개"
+        android:background="@drawable/background_activity_instruction"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingTop="8dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="8dp"
+        android:text="도움말"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/mainClearButton"
-        app:layout_constraintEnd_toEndOf="@+id/mainClearButton"
-        app:layout_constraintStart_toStartOf="@+id/mainClearButton" />
-
-    <TextView
-        android:id="@+id/mainFirstPrizeExistTextVIewTmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FF0000"
-        app:layout_constraintBottom_toBottomOf="@+id/mainClearButton"
-        app:layout_constraintEnd_toStartOf="@+id/mainClearButton"
+        android:textColor="#F4511E"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/mainSelectHistoryTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainClearButton"
-        tools:text="751회 1등" />
+        app:layout_constraintTop_toBottomOf="@+id/mainSelectGeneratorTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

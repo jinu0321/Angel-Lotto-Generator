@@ -1,9 +1,10 @@
-package com.jincal.angellottogenerator
+package com.jincal.angellottogenerator.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.jincal.angellottogenerator.R
+import com.jincal.angellottogenerator.ResultRecyclerViewAdapter
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import com.jincal.valorantstory.RecyclerViewDecoration
 import kotlinx.android.synthetic.main.activity_result.*
@@ -61,7 +62,10 @@ class ResultActivity : AppCompatActivity() {
             }
         }
 
-        resultRecyclerView.adapter = ResultRecyclerViewAdapter(resultCombinationList)
+        resultRecyclerView.adapter =
+            ResultRecyclerViewAdapter(
+                resultCombinationList
+            )
         resultRecyclerView.layoutManager = LinearLayoutManager(this)
         resultRecyclerView.addItemDecoration(RecyclerViewDecoration(3, 4))
 
