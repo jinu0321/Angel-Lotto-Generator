@@ -7,6 +7,20 @@
     android:background="@drawable/background_activity_history"
     tools:context=".activities.HistoryManualCheckActivity">
 
+    <TextView
+        android:id="@+id/manualFirstPrizeExistTextVIewTmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manualLottoBallWholeLayout"
+        tools:text="751회 1등" />
+
     <LinearLayout
         android:id="@+id/manualLottoBallWholeLayout"
         android:layout_width="0dp"
@@ -654,7 +668,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="번호 6개를 입력해주세요."
+        android:text="1등 번호 수동 확인"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
