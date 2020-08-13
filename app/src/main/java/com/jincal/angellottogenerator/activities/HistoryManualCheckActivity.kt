@@ -22,7 +22,7 @@ class HistoryManualCheckActivity : AppCompatActivity() {
         setContentView(R.layout.activity_history_manual_check)
 
         AdManager.loadBannerAd(cAdView)
-
+      
         val balls = listOf(
             manualSelectBall1,
             manualSelectBall2,
