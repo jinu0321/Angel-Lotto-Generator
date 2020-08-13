@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jincal.angellottogenerator.R
 import com.jincal.angellottogenerator.ResultRecyclerViewAdapter
+import com.jincal.angellottogenerator.objects.AdManager
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import com.jincal.valorantstory.RecyclerViewDecoration
 import kotlinx.android.synthetic.main.activity_result.*
@@ -14,6 +15,8 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
+        AdManager.loadBannerAd(rAdView)
 
         val ballCount = SelectedBallHolder.selectedBallCounts
         val resultCount = SelectedBallHolder.resultCount
@@ -69,6 +72,6 @@ class ResultActivity : AppCompatActivity() {
         resultRecyclerView.layoutManager = LinearLayoutManager(this)
         resultRecyclerView.addItemDecoration(RecyclerViewDecoration(3, 4))
 
-        textView4.text = "선택한 번호: ${SelectedBallHolder.selectedBallList.joinToString()}"
+        resultNameText.text = "선택한 번호: ${SelectedBallHolder.selectedBallList.joinToString()}"
     }
 }

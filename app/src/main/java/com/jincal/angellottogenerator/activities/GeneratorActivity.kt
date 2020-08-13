@@ -1,26 +1,24 @@
 package com.jincal.angellottogenerator.activities
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.DisplayMetrics
+import androidx.appcompat.app.AppCompatActivity
 import com.jincal.angellottogenerator.R
 import com.jincal.angellottogenerator.classes.LottoRealmObject
 import com.jincal.angellottogenerator.functions.getCombination
+import com.jincal.angellottogenerator.objects.RealmConfigurationSupplier
+import com.jincal.angellottogenerator.objects.ScreenSizeHolder
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import com.jincal.angellottogenerator.objects.SelectedBallHolder.selectedBallSet
-import kotlinx.android.synthetic.main.activity_generator.*
-import com.jincal.angellottogenerator.objects.RealmConfigurationSupplier
+import com.jincal.angellottogenerator.objects.ViewController
 import io.realm.Realm
 import io.realm.kotlin.where
-import com.jincal.angellottogenerator.objects.ViewController
-import com.jincal.angellottogenerator.objects.ScreenSizeHolder
+import kotlinx.android.synthetic.main.activity_generator.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.textColor
 import org.jetbrains.anko.toast
-import java.lang.Exception
 
 class GeneratorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

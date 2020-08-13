@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.jincal.angellottogenerator.R
 import kotlinx.android.synthetic.main.activity_history.*
 import com.jincal.angellottogenerator.functions.getLatestEpisode
+import com.jincal.angellottogenerator.objects.AdManager
 import com.jincal.angellottogenerator.objects.ViewController
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
 class HistoryActivity : AppCompatActivity() {
@@ -15,6 +17,8 @@ class HistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
+
+        AdManager.loadBannerAd(hAdView)
 
         var selectedEpisode =
             getLatestEpisode()

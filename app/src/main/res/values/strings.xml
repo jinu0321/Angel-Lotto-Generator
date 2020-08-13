@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">번호생성기</string>
+    <string name="app_name">천사 로또번호 생성기</string>
+    <string name="app_admob_id">ca-app-pub-5137350238508067~4199134341</string>
+    <string name="id_banner">ca-app-pub-5137350238508067/3971903631</string>
+    <string name="id_banner_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="id_interstitial">ca-app-pub-5137350238508067/7795614488</string>
+    <string name="id_interstitial_test">ca-app-pub-3940256099942544/1033173712</string>
 
     <string name="main_internetConnection_fail">인터넷에 연결해주세요!</string>
     <string name="main_apidownload_success">모두 최신입니다!</string>
