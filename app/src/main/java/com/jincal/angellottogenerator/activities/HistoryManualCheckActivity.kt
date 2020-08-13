@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.jincal.angellottogenerator.R
 import com.jincal.angellottogenerator.classes.LottoRealmObject
+import com.jincal.angellottogenerator.objects.AdManager
 import com.jincal.angellottogenerator.objects.RealmConfigurationSupplier
 import com.jincal.angellottogenerator.objects.SelectedBallHolder
 import kotlinx.android.synthetic.main.activity_history_manual_check.*
@@ -12,6 +13,7 @@ import com.jincal.angellottogenerator.objects.ViewController
 import io.realm.Realm
 import io.realm.kotlin.where
 import kotlinx.android.synthetic.main.activity_generator.*
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.textColor
 
 class HistoryManualCheckActivity : AppCompatActivity() {
@@ -19,6 +21,8 @@ class HistoryManualCheckActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history_manual_check)
 
+        AdManager.loadBannerAd(cAdView)
+      
         val balls = listOf(
             manualSelectBall1,
             manualSelectBall2,

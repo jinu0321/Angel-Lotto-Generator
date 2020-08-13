@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.HistoryManualCheckActivity"></activity>
+        <activity android:name=".activities.HistoryManualCheckActivity" />
         <activity android:name=".activities.HistoryActivity" />
         <activity android:name=".activities.InstructionActivity" />
         <activity
@@ -26,6 +26,10 @@
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.ResultActivity" />
         <activity android:name=".activities.GeneratorActivity" />
+      
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_admob_id"/>
     </application>
 
 </manifest>

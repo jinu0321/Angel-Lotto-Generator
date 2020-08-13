@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.DisplayMetrics
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.MobileAds
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -60,16 +61,23 @@ class SplashActivity : AppCompatActivity() {
                 }
             }
         }
-
-
         ///////////////////////////////////////////////
 
+        ///////////////////////////////////////////////
+        // 전면광고는 번호생성기와 1등번호조회에 들어갈 때마다 보여준다.(광고 로드가 되었다면)
+        MobileAds.initialize(this)
+        ///////////////////////////////////////////////
+
+        ///////////////////////////////////////////////
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         ScreenSizeHolder.screenWidth = displayMetrics.widthPixels
         ScreenSizeHolder.screenHeight = displayMetrics.heightPixels
+        ///////////////////////////////////////////////
 
+        ///////////////////////////////////////////////
         Realm.init(this)
+        ///////////////////////////////////////////////
 
         Handler().postDelayed({
             // This method will be executed once the timer is over
