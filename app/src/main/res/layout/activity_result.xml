@@ -17,10 +17,10 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
 
     <TextView
         android:id="@+id/resultNameText"
@@ -29,30 +29,33 @@
         android:gravity="center"
         android:text="선택한 번호: 1, 2, 3, 4, 5, 6"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        ads:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintBottom_toTopOf="@+id/resultRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/rAdView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:layout_marginStart="3dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginBottom="3dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/id_banner"
-        app:layout_constraintBottom_toBottomOf="parent"
+        ads:adUnitId="@string/id_banner_test"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
