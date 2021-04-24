@@ -17,7 +17,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FF0000"
         android:textSize="26sp"
-        ads:layout_constraintBottom_toTopOf="@+id/textView6"
+        ads:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manualLottoBallWholeLayout"
@@ -674,14 +674,14 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -689,12 +689,12 @@
         android:id="@+id/cAdView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:layout_marginStart="3dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginBottom="3dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/id_banner"
-        app:layout_constraintBottom_toBottomOf="parent"
+        ads:adUnitId="@string/id_banner_test"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
