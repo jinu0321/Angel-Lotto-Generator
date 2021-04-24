@@ -7,8 +7,8 @@
     <string name="id_interstitial_test">ca-app-pub-3940256099942544/1033173712</string>
 
     <!--아래 부분을 변경하기-->
-    <string name="id_banner">@string/id_banner_test</string>
-    <string name="id_interstitial">@string/id_interstitial_test</string>
+    <string name="id_banner">@string/id_banner_release</string>
+    <string name="id_interstitial">@string/id_interstitial_release</string>
     <!--윗 부분을 변경하기-->
 
     <string name="main_internetConnection_fail">인터넷에 연결해주세요!</string>
