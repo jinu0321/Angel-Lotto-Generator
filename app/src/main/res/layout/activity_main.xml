@@ -89,7 +89,7 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="3dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/id_banner_test"
+        ads:adUnitId="@string/id_banner"
         ads:layout_constraintHorizontal_bias="0.0"
         ads:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

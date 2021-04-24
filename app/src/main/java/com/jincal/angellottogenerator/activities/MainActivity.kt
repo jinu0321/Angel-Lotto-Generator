@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = getString(R.string.id_interstitial_test)
+        mInterstitialAd.adUnitId = getString(R.string.id_interstitial)
         mInterstitialAd.loadAd(AdRequest.Builder().build())
         mInterstitialAd.adListener = object : AdListener() {
             override fun onAdClosed() {
