@@ -20,6 +20,7 @@ class ResultRecyclerViewAdapter(val resultList: MutableList<List<Int>>): Recycle
     }
 
     override fun onBindViewHolder(holder: ResultRecyclerViewHolder, position: Int) {
+        holder.itemView.resultItemNumbering.text = (position + 1).toString()
         holder.itemView.resultItemTextView.text = resultList[position].joinToString(", ")
     }
 
